@@ -49,17 +49,17 @@ cfg = {
 	deformationExponent = 0.5,					-- How much should the handling file deformation setting be compressed toward 1.0. (Make cars more similar). A value of 1=no change. Lower values will compress more, values above 1 it will expand. Dont set to zero or negative.
 	collisionDamageExponent = 0.5,				-- How much should the handling file deformation setting be compressed toward 1.0. (Make cars more similar). A value of 1=no change. Lower values will compress more, values above 1 it will expand. Dont set to zero or negative.
 
-	damageFactorEngine = 3.0,					-- Sane values are 1 to 100. Higher values means more damage to vehicle. A good starting point is 10
-	damageFactorBody = 3.0,					-- Sane values are 1 to 100. Higher values means more damage to vehicle. A good starting point is 10
+	damageFactorEngine = 10.0,					-- Sane values are 1 to 100. Higher values means more damage to vehicle. A good starting point is 10
+	damageFactorBody = 10.0,					-- Sane values are 1 to 100. Higher values means more damage to vehicle. A good starting point is 10
 	damageFactorPetrolTank = 32.0,				-- Sane values are 1 to 200. Higher values means more damage to vehicle. A good starting point is 64
 	engineDamageExponent = 0.3,					-- How much should the handling file engine damage setting be compressed toward 1.0. (Make cars more similar). A value of 1=no change. Lower values will compress more, values above 1 it will expand. Dont set to zero or negative.
-	weaponsDamageMultiplier = 1.2,				-- How much damage should the vehicle get from weapons fire. Range 0.0 to 10.0, where 0.0 is no damage and 10.0 is 10x damage. -1 = don't touch
+	weaponsDamageMultiplier = 2.4,				-- How much damage should the vehicle get from weapons fire. Range 0.0 to 10.0, where 0.0 is no damage and 10.0 is 10x damage. -1 = don't touch
 	degradingHealthSpeedFactor = 2,			-- Speed of slowly degrading health, but not failure. Value of 10 means that it will take about 0.25 second per health point, so degradation from 800 to 305 will take about 2 minutes of clean driving. Higher values means faster degradation
 	cascadingFailureSpeedFactor = 4.0,			-- Sane values are 1 to 100. When vehicle health drops below a certain point, cascading failure sets in, and the health drops rapidly until the vehicle dies. Higher values means faster failure. A good starting point is 8
 
-	degradingFailureThreshold = 250.0,			-- Below this value, slow health degradation will set in
-	cascadingFailureThreshold = 200.0,			-- Below this value, health cascading failure will set in
-	engineSafeGuard = 50.0,						-- Final failure value. Set it too high, and the vehicle won't smoke when disabled. Set too low, and the car will catch fire from a single bullet to the engine. At health 100 a typical car can take 3-4 bullets to the engine before catching fire.
+	degradingFailureThreshold = 600.0,			-- Below this value, slow health degradation will set in
+	cascadingFailureThreshold = 350.0,			-- Below this value, health cascading failure will set in
+	engineSafeGuard = 100.0,						-- Final failure value. Set it too high, and the vehicle won't smoke when disabled. Set too low, and the car will catch fire from a single bullet to the engine. At health 100 a typical car can take 3-4 bullets to the engine before catching fire.
 
 	torqueMultiplierEnabled = true,				-- Decrease engine torque as engine gets more and more damaged
 
@@ -76,7 +76,7 @@ cfg = {
 
 	compatibilityMode = false,					-- prevents other scripts from modifying the fuel tank health to avoid random engine failure with BVA 2.01 (Downside is it disabled explosion prevention)
 		
-	randomTireBurstInterval = 0,				-- Number of minutes (statistically, not precisely) to drive above 22 mph before you get a tire puncture. 0=feature is disabled
+	randomTireBurstInterval = 30,				-- Number of minutes (statistically, not precisely) to drive above 22 mph before you get a tire puncture. 0=feature is disabled
 
 
 	-- Class Damagefactor Multiplier
@@ -84,25 +84,25 @@ cfg = {
 	-- Use it to increase or decrease damage for each class
 
 	classDamageMultiplier = {
-		[0] = 	0.3,		--	0: Compacts
-				0.3,		--	1: Sedans
-				0.3,		--	2: SUVs
-				0.3,		--	3: Coupes
-				0.3,		--	4: Muscle
-				0.3,		--	5: Sports Classics
-				0.3,		--	6: Sports
-				0.3,		--	7: Super
-				0.0,		--	8: Motorcycles
-				0.3,		--	9: Off-road
+		[0] = 	0.6,		--	0: Compacts
+		        0.6,		--	1: Sedans
+				0.4,		--	2: SUVs
+				0.6,		--	3: Coupes
+				0.6,		--	4: Muscle
+				0.6,		--	5: Sports Classics
+				0.6,		--	6: Sports
+				0.6,		--	7: Super
+				0.6,		--	8: Motorcycles
+				0.4,		--	9: Off-road
 				0.3,		--	10: Industrial
 				0.3,		--	11: Utility
-				0.3,		--	12: Vans
-				0.3,		--	13: Cycles
-				0.3,		--	14: Boats
+				0.6,		--	12: Vans
+				0.6,		--	13: Cycles
+				0.6,		--	14: Boats
 				0.3,		--	15: Helicopters
 				0.3,		--	16: Planes
-				0.3,		--	17: Service
-				0.3,		--	18: Emergency
+				0.6,		--	17: Service
+				0.6,		--	18: Emergency
 				0.3,		--	19: Military
 				0.3,		--	20: Commercial
 				0.3			--	21: Trains
