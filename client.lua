@@ -525,7 +525,6 @@ CreateThread(function()
 
 			if healthEngineCurrent <= cfg.engineSafeGuard+1 and cfg.limpMode == false then
 				local vehpos = GetEntityCoords(vehicle)
-				StartParticleFxLoopedAtCoord("ent_ray_heli_aprtmnt_l_fire", vehpos.x, vehpos.y, vehpos.z-0.7, 0.0, 0.0, 0.0, 1.0, false, false, false, false)
 				SetVehicleUndriveable(vehicle,true)
 			end
 
