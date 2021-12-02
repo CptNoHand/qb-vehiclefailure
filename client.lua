@@ -24,10 +24,10 @@ local healthPetrolTankCurrent = 1000.0
 local healthPetrolTankNew = 1000.0
 local healthPetrolTankDelta = 0.0
 local healthPetrolTankDeltaScaled = 0.0
-local tireBurstLuckyNumber
+local tireBurstLuckyNumber = 495
 local fixMessagePos = math.random(repairCfg.fixMessageCount)
 local noFixMessagePos = math.random(repairCfg.noFixMessageCount)
-local tireBurstMaxNumber = cfg.randomTireBurstInterval * 1200;
+local tireBurstMaxNumber = cfg.randomTireBurstInterval * 2000;
 if cfg.randomTireBurstInterval ~= 0 then tireBurstLuckyNumber = math.random(tireBurstMaxNumber) end
 
 local DamageComponents = {
