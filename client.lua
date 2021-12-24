@@ -44,7 +44,7 @@ local function DamageRandomComponent()
 	local dmgFctr = math.random() + math.random(0, 2)
 	local randomComponent = DamageComponents[math.random(1, #DamageComponents)]
 	local randomDamage = (math.random() + math.random(0, 1)) * dmgFctr
-	--exports['qb-vehicletuning']:SetVehicleStatus(QBCore.Functions.GetPlate(vehicle), randomComponent, exports['qb-vehicletuning']:GetVehicleStatus(QBCore.Functions.GetPlate(vehicle), randomComponent) - randomDamage)
+	exports['qb-mechanicjob']:SetVehicleStatus(QBCore.Functions.GetPlate(vehicle), randomComponent, exports['qb-mechanicjob']:GetVehicleStatus(QBCore.Functions.GetPlate(vehicle), randomComponent) - randomDamage)
 end
 
 local function CleanVehicle(vehicle)
@@ -447,7 +447,7 @@ if cfg.torqueMultiplierEnabled or cfg.preventVehicleFlip or cfg.limpMode then
 								-- Forward and braking
 								isBrakingForward = true
 								brk = fscale(brake, 127.0, 254.0, 0.01, fBrakeForce, 10.0-(cfg.sundayDriverBrakeCurve*2.0))
-								--exports['qb-vehicletuning']:SetVehicleStatus(QBCore.Functions.GetPlate(vehicle), "brakes", exports['qb-vehicletuning']:GetVehicleStatus(QBCore.Functions.GetPlate(vehicle), "brakes") - 0.01)
+								exports['qb-mechanicjob']:SetVehicleStatus(QBCore.Functions.GetPlate(vehicle), "brakes", exports['qb-mechanicjob']:GetVehicleStatus(QBCore.Functions.GetPlate(vehicle), "brakes") - 0.01)
 							end
 						elseif speed <= -1.0 then
 							-- Going reverse
@@ -455,7 +455,7 @@ if cfg.torqueMultiplierEnabled or cfg.preventVehicleFlip or cfg.limpMode then
 								-- Reversing and accelerating (using the brake)
 								local rev = fscale(brake, 127.0, 254.0, 0.1, 1.0, 10.0-(cfg.sundayDriverAcceleratorCurve*2.0))
 								factor = factor * rev
-								--exports['qb-vehicletuning']:SetVehicleStatus(QBCore.Functions.GetPlate(vehicle), "brakes", exports['qb-vehicletuning']:GetVehicleStatus(QBCore.Functions.GetPlate(vehicle), "brakes") - 0.01)
+								exports['qb-mechanicjob']:SetVehicleStatus(QBCore.Functions.GetPlate(vehicle), "brakes", exports['qb-mechanicjob']:GetVehicleStatus(QBCore.Functions.GetPlate(vehicle), "brakes") - 0.01)
 							end
 							if accelerator > 127 then
 								-- Reversing and braking (Using the accelerator)
