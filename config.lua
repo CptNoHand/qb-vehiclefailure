@@ -213,3 +213,5 @@ repairCfg = {
     fixMessageCount = 7,
 	noFixMessageCount = 6
 }
+
+RepairEveryoneWhitelisted = true
