@@ -425,29 +425,29 @@ if cfg.torqueMultiplierEnabled or cfg.preventVehicleFlip or cfg.limpMode then
 						local brk = fBrakeForce
 						if speed >= 1.0 then
 							-- Going forward
-							if accelerator > 154 then
+							if accelerator > 127 then
 								-- Forward and accelerating
-								local acc = fscale(accelerator, 154.0, 254.0, 0.1, 1.0, 10.0-(cfg.sundayDriverAcceleratorCurve*2.0))
+								local acc = fscale(accelerator, 127.0, 254.0, 0.1, 1.0, 10.0-(cfg.sundayDriverAcceleratorCurve*2.0))
 								factor = factor * acc
 							end
-							if brake > 154 then
+							if brake > 127 then
 								-- Forward and braking
 								isBrakingForward = true
-								brk = fscale(brake, 154.0, 254.0, 0.01, fBrakeForce, 10.0-(cfg.sundayDriverBrakeCurve*2.0))
+								brk = fscale(brake, 127.0, 254.0, 0.01, fBrakeForce, 10.0-(cfg.sundayDriverBrakeCurve*2.0))
 								exports['qb-mechanicjob']:SetVehicleStatus(QBCore.Functions.GetPlate(vehicle), "brakes", exports['qb-mechanicjob']:GetVehicleStatus(QBCore.Functions.GetPlate(vehicle), "brakes") - 0.01)
 							end
 						elseif speed <= -1.0 then
 							-- Going reverse
-							if brake > 154 then
+							if brake > 127 then
 								-- Reversing and accelerating (using the brake)
-								local rev = fscale(brake, 154.0, 254.0, 0.1, 1.0, 10.0-(cfg.sundayDriverAcceleratorCurve*2.0))
+								local rev = fscale(brake, 127.0, 254.0, 0.1, 1.0, 10.0-(cfg.sundayDriverAcceleratorCurve*2.0))
 								factor = factor * rev
 								exports['qb-mechanicjob']:SetVehicleStatus(QBCore.Functions.GetPlate(vehicle), "brakes", exports['qb-mechanicjob']:GetVehicleStatus(QBCore.Functions.GetPlate(vehicle), "brakes") - 0.01)
 							end
-							if accelerator > 154 then
+							if accelerator > 127 then
 								-- Reversing and braking (Using the accelerator)
 								isBrakingReverse = true
-								brk = fscale(accelerator, 154.0, 254.0, 0.01, fBrakeForce, 10.0-(cfg.sundayDriverBrakeCurve*2.0))
+								brk = fscale(accelerator, 127.0, 254.0, 0.01, fBrakeForce, 10.0-(cfg.sundayDriverBrakeCurve*2.0))
 							end
 						else
 							-- Stopped or almost stopped or sliding sideways
